@@ -1,17 +1,20 @@
 package entities;
 
-//import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserRegister {
 	public String name;
 	public String sobrenome;
 	public int cpf;
-//	public Date data;
+	public Date data;
 	
-	public UserRegister (String name, String sobrenome, int cpf ) {
+	public UserRegister (String name, String sobrenome, int cpf, String data ) throws ParseException {
 		this.name = name;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
+		this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
 		
 	}
 
@@ -39,13 +42,12 @@ public class UserRegister {
 		this.cpf = cpf;
 	}
 
-//	public Date getData() {
-//		return data;
-//	}
+	public Date getData() {
+		return data;
+	}
 
-//	public void setData(Date data) {
-//		this.data = data;
-//	}
-	
-	
+	public void setData(Date data) {
+		this.data = data;
+	}
+		
 }
