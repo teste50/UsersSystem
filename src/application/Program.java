@@ -7,7 +7,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.UserRegister;
+import entities.CandidatosRegister;
+import entities.Vagas;
 
 public class Program {
 
@@ -16,10 +17,17 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Digite a quantidade usuários que você quer cadastrar.");
+		
+		System.out.println("Digite a quantidade candidatos que você quer cadastrar.");
 		int users = sc.nextInt(); 
 		
-		UserRegister[] vect = new UserRegister[users];
+		if(users > 15) {
+			System.out.println("Você ultrapassou  o limite permitido de "+users+ " candidatos");
+			System.out.print("Digite novamente  a quantidade de candidatos que você deseja cadastrar: ");
+			users = sc.nextInt();
+		}
+		
+		CandidatosRegister[] vect = new CandidatosRegister[users];
 		
 		for(int i=0; i < users; i++) {
 			sc.nextLine();
@@ -37,7 +45,10 @@ public class Program {
 			System.out.println("Data de nascimento: ");
 			String data = sc.nextLine();
 			
-			vect[i] = new UserRegister(name, sobrenome, cpf, data);
+			System.out.println("Digite a vaga que quer se candidatar: ");
+			String vaga = sc.nextLine();
+			
+			vect[i] = new CandidatosRegister(name, sobrenome, cpf, data, new Vagas(vaga));
 		}
 		
 		
@@ -45,7 +56,8 @@ public class Program {
 		Date formatedDate = vect[0].getData();
 	
 //		apenas para visualizer no console as infos cadastradas
-		System.out.println(vect[0].getName() + " " + vect[0].getSobrenome() +  " " + vect[0].getCpf() + " " + dateNascmineto.format(formatedDate));
+		System.out.println(vect[0].getName() + " " + vect[0].getSobrenome() +  " " + vect[0].getCpf() + " " + dateNascmineto.format(formatedDate) + " " + vect[0].getVaga().getVaga1());
+		
 		
 		sc.close();
 	}

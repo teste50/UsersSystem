@@ -4,18 +4,28 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class UserRegister {
+public class CandidatosRegister {
 	public String name;
 	public String sobrenome;
 	public int cpf;
 	public Date data;
+	public Vagas vaga;
 	
-	public UserRegister (String name, String sobrenome, int cpf, String data ) throws ParseException {
+	public CandidatosRegister (String name, String sobrenome, int cpf, String data, Vagas vaga ) throws ParseException {
 		this.name = name;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
 		this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+		this.vaga = vaga;
 		
+	}
+
+	public Vagas getVaga() {
+		return vaga;
+	}
+
+	public void setVaga(Vagas vaga) {
+		this.vaga = vaga;
 	}
 
 	public String getName() {
@@ -49,5 +59,4 @@ public class UserRegister {
 	public void setData(Date data) {
 		this.data = data;
 	}
-		
 }
