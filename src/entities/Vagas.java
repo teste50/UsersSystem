@@ -4,7 +4,6 @@ public class Vagas {
 	public String vaga;
 
 	
-	
 	public Vagas(String vaga) {
 		this.vaga = vaga;
 	}

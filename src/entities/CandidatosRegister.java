@@ -7,17 +7,26 @@ import java.util.Date;
 public class CandidatosRegister {
 	public String name;
 	public String sobrenome;
-	public int cpf;
+	public String cpf;
 	public Date data;
 	public Vagas vaga;
+	public int idade;
 	
-	public CandidatosRegister (String name, String sobrenome, int cpf, String data, Vagas vaga ) throws ParseException {
+	public CandidatosRegister (String name, String sobrenome, String cpf, String data, Vagas vaga, int idade  ) throws ParseException {
 		this.name = name;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
 		this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
 		this.vaga = vaga;
-		
+		this.idade = idade;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
 	public Vagas getVaga() {
@@ -44,11 +53,12 @@ public class CandidatosRegister {
 		this.sobrenome = sobrenome;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
