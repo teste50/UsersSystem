@@ -7,12 +7,12 @@ import java.util.Date;
 public class CandidatosRegister {
 	public String name;
 	public String sobrenome;
-	public String cpf;
+	public int cpf;
 	public Date data;
 	public Vagas vaga;
 	public int idade;
 	
-	public CandidatosRegister (String name, String sobrenome, String cpf, String data, Vagas vaga, int idade  ) throws ParseException {
+	public CandidatosRegister (String name, String sobrenome, int cpf, String data, Vagas vaga, int idade  ) throws ParseException {
 		this.name = name;
 		this.sobrenome = sobrenome;
 		this.cpf = cpf;
@@ -53,12 +53,12 @@ public class CandidatosRegister {
 		this.sobrenome = sobrenome;
 	}
 
-	public String getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
@@ -69,4 +69,5 @@ public class CandidatosRegister {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
 }
