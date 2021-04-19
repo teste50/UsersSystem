@@ -67,7 +67,7 @@ public class Program {
 			sc.nextLine();
 //			Validação do cpf o própio console não deixa o usuário deixar em campo vazio.
 
-			if (cpf > 0) {
+			if (cpf > -1) {
 				for (int j = 0; j < users; j++) {
 					int userExist = vect[j].cpf;
 
